@@ -3,9 +3,6 @@
 
 Includes a sass version of Ink (http://zurb.com/ink/docs.php).
 
-Campaign Monitor template reference: https://www.campaignmonitor.com/create/
-Mailchimp template reference: http://templates.mailchimp.com/getting-started/template-language/
-
 
 ## Installation
 
@@ -73,3 +70,13 @@ The email subject line is set in this order:
 1. The `subject` argument passed to `gulp test`
 2. The `subject` property in `package.json`
 3. The `name` property in `package.json`
+
+## Templates
+
+All `*.tpl.html` files in `/templates` are processed into `/dist`.
+
+There is a very basic shell provided (`/templates/index.tpl.php`).
+
+Campaign Monitor template language reference: https://www.campaignmonitor.com/create/
+
+Mailchimp template language reference: http://templates.mailchimp.com/getting-started/template-language/
