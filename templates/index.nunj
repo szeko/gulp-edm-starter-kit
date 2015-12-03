@@ -1,0 +1,23 @@
+{% extends "layouts/default.nunj" %}
+
+{% block title %}{% endblock %}
+
+{% block preheader %}{% endblock %}
+
+{% block header %}
+
+	{% include "blocks/header.nunj" %}
+
+{% endblock %}
+
+{% block body %}
+
+	{% include "blocks/content.nunj" %}
+
+{% endblock %}
+
+{% block footer %}
+
+	{% include "blocks/footer.nunj" %}
+
+{% endblock %}

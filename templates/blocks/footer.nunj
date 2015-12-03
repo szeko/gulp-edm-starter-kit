@@ -1,0 +1,18 @@
+<table class="row">
+	<tr>
+		<td class="wrapper last">
+
+			<table class="twelve columns">
+				<tr>
+					<td align="center">
+					 <p class="center">&copy; 2015 Company</p>
+					 <p class="center"><a href="#" target="_blank">Unsubscribe</a></p>
+					</td>
+					<td class="expander"></td>
+				</tr>
+			</table>
+
+		</td>
+	</tr>
+</table>
+

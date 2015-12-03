@@ -1,0 +1,5 @@
+{% macro render(src, width, height, alt='', class='', editable=false) %}
+
+	<img alt="{{alt}}" label="{{alt}}" {{"editable" if editable == true else ""}} class="{{class}}" style="width: {{width}}px; height: {{height}}px;" width="{{width}}" height="{{height}}" src="/images/{{src}}" />
+
+{% endmacro %}

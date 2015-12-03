@@ -1,0 +1,17 @@
+<table class="row">
+	<tr>
+		<td class="wrapper last">
+
+			<table class="twelve columns">
+				<tr>
+					<td>
+						<h1>Hi, [firstname]</h1>
+						<p>Lorem ipsum dolor sit amet</p>
+					</td>
+					<td class="expander"></td>
+				</tr>
+			</table>
+
+		</td>
+	</tr>
+</table>

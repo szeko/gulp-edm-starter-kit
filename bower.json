@@ -1,8 +1,0 @@
-{
-  "name": "gulp-edm-starter-kit",
-  "private": true,
-  "dependencies": {
-    "ink": "faustgertz/sassy-ink"
-  }
-}
-
