@@ -6,6 +6,7 @@
   "devDependencies": {
     "Ink": "faustgertz/sassy-ink",
     "browser-sync": "~2.10.0",
+    "css-mqpacker": "^4.0.0",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-awspublish": "^3.0.1",
@@ -27,7 +28,6 @@
     "imagemin-pngcrush": "^4.1.0",
     "nunjucks": "^2.2.0",
     "postcss": "^5.0.12",
-    "postcss-important": "^0.3.0",
     "run-sequence": "^1.1.5"
   }
 }

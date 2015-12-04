@@ -4,6 +4,7 @@
 $container-width: 600px;
 $column-gutter: 20px;
 $small-container-width: 100%;
+$small-range: (0px, $container-width);
 $wrapper-padding-top: 0;
 $column-cell-padding-bottom: 0;
 $sub-column-padding-right: 0;
@@ -52,6 +53,14 @@ $black: #000000;
 
 @import "ink";
 
+@mixin mobile {
+	@media #{$small-only} {
+		table[class="body"] {
+			@content;
+		}
+	}
+}
+
 
 /* Custom settings */
 
@@ -84,30 +93,17 @@ table.body {
 }
 
 table.header {
+	@include mobile {
+	}
 }
 
 table.main {
+	@include mobile {
+	}
 }
 
 table.footer {
-}
-
-/* Mobile Styles */
-@if $include-html-media-query-classes {
-@media #{$small-only} {
-
-	table[class="body"] {
-
-		table.header {
-		}
-
-		table.main {
-		}
-
-		table.footer {
-		}
-
+	@include mobile {
 	}
+}
 
-}
-}
