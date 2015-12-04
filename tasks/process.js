@@ -11,6 +11,8 @@ var runSequence = require('run-sequence');
 
 module.exports = function (gulp, env, errorHandler) {
 
+	var minifyHtml = typeof env.minifyHtml === 'undefined' ? true : env.minifyHtml;
+
 	// Configure the nunjucks environment
 	var nunjucksEnv = nunjucksLib.configure(
 		path.resolve(env.paths.src.templates),
@@ -36,8 +38,8 @@ module.exports = function (gulp, env, errorHandler) {
 					'img'
 				]
 			}))
-			.pipe( htmlmin({ collapseWhitespace: true }) )
-			.pipe( gulp.dest(env.paths.dist.build) );
+			.pipe( minifyHtml ? htmlmin({ collapseWhitespace: true }) : gutil.noop() )
+			.pipe( gulp.dest(env.paths.dist.build) )
 			.pipe( browserSync.active ? browserSync.reload({ stream: true, once: true }) : gutil.noop() );
 	});
 

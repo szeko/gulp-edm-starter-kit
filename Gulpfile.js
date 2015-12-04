@@ -2,7 +2,8 @@ var gulp = require('gulp');
 
 var env = {
 	dist: './dist/',
-	pjson: require('./package.json')
+	pjson: require('./package.json'),
+	minifyHtml: true
 };
 
 env.paths = {
