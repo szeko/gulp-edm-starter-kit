@@ -1,6 +1,9 @@
+{% set title = '' %}
+{% set css = 'styles.css' %}
+{% set inlinecss = 'inline.css' %}
+
 {% extends "layouts/default.nunj" %}
 
-{% block title %}{% endblock %}
 
 {% block preheader %}{% endblock %}
 

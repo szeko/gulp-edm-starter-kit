@@ -14,13 +14,13 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width"/>
 
-		<title>{% block title %}{% endblock %}</title>
+		<title>{{ title }}</title>
 
 		{# Inlined HTML Styles #}
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="{{ css or 'styles.css' }}" />
 
 		{# Inline Block Styles #}
-		<link data-premailer="ignore" rel="stylesheet" href="inline.css" inline />
+		<link data-premailer="ignore" rel="stylesheet" href="{{ inlinecss or 'inline.css' }}" inline />
 
 	</head>
 
