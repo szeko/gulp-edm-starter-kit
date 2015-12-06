@@ -38,6 +38,8 @@ module.exports = function (gulp, env, errorHandler) {
 			});
 		}
 
+		env.credentials.litmus.url = 'https://' + env.credentials.litmus.company + '.litmus.com';
+
 		var options = env.credentials.litmus;
 		options.subject = subject || env.pjson.name;
 
