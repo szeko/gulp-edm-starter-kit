@@ -5,7 +5,7 @@ module.exports = function (gulp, env, errorHandler) {
 
 	return gulp.task('images', function() {
 
-		return gulp.src(env.paths.src.images).on("error", errorHandler)
+		return gulp.src(env.paths.src.image).on("error", errorHandler)
 			.pipe(imagemin({
 				use: [pngcrush()]
 			}))

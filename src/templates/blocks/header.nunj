@@ -7,7 +7,7 @@
 			<table class="twelve columns">
 				<tr>
 					<td class="six sub-columns">
-						{{ img.render('images/logo.png', 70, 20, class='center') }}
+						{{ img.render('logo.png', class='center') }}
 					</td>
 					<td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
 						<a href="#">View online</a>

@@ -1,5 +1,7 @@
 var gutil = require('gulp-util');
+var fs = require('fs');
 var path = require('path');
+var glob = require('glob');
 var del = require('del');
 var rename = require('gulp-rename');
 var data = require('gulp-data');
@@ -10,6 +12,7 @@ var htmlmin = require('gulp-htmlmin');
 var inlinesource = require('gulp-inline-source');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
+var assign = require('lodash/object/assign');
 
 module.exports = function (gulp, env, errorHandler) {
 
@@ -24,9 +27,32 @@ module.exports = function (gulp, env, errorHandler) {
 		}
 	);
 
+	var filters = glob.sync(path.resolve(process.cwd(), env.paths.src.filters, '*.js'));
+	filters.forEach(function(filename) {
+		var pathData = path.parse(filename);
+		nunjucksEnv.addFilter( pathData.name, require(filename) );
+	});
+
 	gulp.task('process.render', function() {
 		return gulp.src('*.nunj', { cwd: env.paths.src.templates }).on("error", errorHandler)
-			// .pipe( data(function(file, done) { done(null, {}); }) )
+			.pipe( data(function(file) {
+				var filedata = file.data || {};
+				var datas = glob.sync(path.resolve(process.cwd(), env.paths.src.data, '*.{js,json}'));
+
+				datas.forEach(function(filename) {
+					var pathData = path.parse(filename);
+					switch(pathData.ext.toLowerCase()) {
+						case '.json':
+							filedata = assign(filedata, require(filename));
+							break;
+						case '.js':
+							filedata[pathData.name] = require(filename)(env, nunjucksEnv)
+							break;
+					}
+				});
+
+				return filedata;
+			}) )
 			.pipe( nunjucks.render() )
 			.pipe( rename({ extname: '.html' }) )
 			.pipe( gulp.dest(env.paths.dist.build) );

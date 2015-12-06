@@ -1,5 +1,9 @@
-{% macro render(src, width, height, alt='', class='', editable=false) %}
+{% macro render(src, hidpi=false, alt='', class='', editable=false) %}
 
-	<img alt="{{alt}}" label="{{alt}}" {{"editable" if editable == true else ""}} class="{{class}}" style="width: {{width}}px; height: {{height}}px;" width="{{width}}" height="{{height}}" src="/images/{{src}}" />
+	{% set img = getImage(src) %}
+	{% set width = img.width/2 if hidpi else img.width %}
+	{% set height = img.height/2 if hidpi else img.height %}
+
+	<img alt="{{alt}}" label="{{alt}}" {{"editable" if editable == true else ""}} class="{{class}}" style="width: {{width}}px; height: {{height}}px;" width="{{width}}" height="{{height}}" src="{{img.src}}" />
 
 {% endmacro %}
