@@ -1,0 +1,7 @@
+@mixin mobile {
+	@media #{$small-only} {
+		table[class="body"] {
+			@content;
+		}
+	}
+}

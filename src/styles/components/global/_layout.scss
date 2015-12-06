@@ -1,0 +1,19 @@
+body,
+table.body {
+	background-color: $bg-color;
+}
+
+table.header {
+	@include mobile {
+	}
+}
+
+table.main {
+	@include mobile {
+	}
+}
+
+table.footer {
+	@include mobile {
+	}
+}
