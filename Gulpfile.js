@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 var env = {
+	src: './src/',
 	dist: './dist/',
 	pjson: require('./package.json'),
 	minifyHtml: true
@@ -8,10 +9,10 @@ var env = {
 
 env.paths = {
 	src: {
-		templates: 'templates/',
-		sass: 'styles/*.scss',
-		styles: 'styles/',
-		images: 'images/**/*',
+		templates: env.src + 'templates/',
+		sass: env.src + 'styles/*.scss',
+		styles: env.src + 'styles/',
+		images: env.src + 'images/**/*',
 		node: 'node_modules/'
 	},
 	dist: {
